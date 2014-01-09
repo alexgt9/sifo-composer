@@ -1,0 +1,21 @@
+{
+        "name": "alexgt9/sifo3",
+        "description": "SIFO Framework 3.0",
+        "keywords": [],
+        "homepage": "https://github.com/alexgt9/sifo-composer",
+        "type": "library",
+        "authors": [
+                {
+                        "name": "Alex",
+                        "email": "alexgt9@gmail.com",
+                        "homepage": "http://sifo.me"
+                }
+        ],
+        "require": {
+                "php": ">=5.3.2",
+                "phpunit/phpunit": "3.7.28"
+        },
+        "autoload": {
+                "psr-4": { "Sifophp\\Sifo\\": "src/Sifo" }
+        }
+}
