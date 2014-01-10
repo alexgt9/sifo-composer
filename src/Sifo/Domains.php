@@ -100,7 +100,7 @@ class Domains
 		}
 		else
 		{
-			$this->instance_inheritance = array( 'common' );
+			$this->instance_inheritance = array( 'Common' );
 		}
 
 		if ( isset( $this->domain_configuration['redirections'] ) && is_array( $this->domain_configuration['redirections'] ) )

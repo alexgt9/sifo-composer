@@ -676,6 +676,7 @@ abstract class Controller
 	{
 		$benchmark_key = 'controller_execution_time';
 		$this->startBench( $benchmark_key );
+
 		$module = Bootstrap::invokeController( $controller );
 		$module->setParams( array_merge( $this->getParams(), $params ) );
 		$module->preDispatch();

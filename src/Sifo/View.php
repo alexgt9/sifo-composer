@@ -52,7 +52,7 @@ class View extends \Smarty
 			$this->addPluginsDir( $templates_path . '_smarty/plugins' );
 		}
 		// Last path is the default smarty plugins directory.
-		$this->addPluginsDir( ROOT_PATH . '/../vendor/alexgt9/Smarty-sifo-plugins' );
+		$this->addPluginsDir( ROOT_PATH . '/../../vendor/alexgt9/sifo-smarty-plugins/src/Smarty-sifo-plugins/' );
 
 		$this->setTemplateDir( ROOT_PATH . '/' );  // The templates are taken using the templates.config.php mappings, under the variable $_tpls.
 
