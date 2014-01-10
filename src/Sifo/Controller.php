@@ -441,7 +441,6 @@ abstract class Controller
 
 		// Add another key inside the debug key:
 		Debug::subSet( 'controllers', $class_name, $this->debug_info );
-
 		$content = $this->view->fetch( $this->layout );
 		$this->stopBench( "view_$class_name", "$class_name: Smarty fetch" );
 		return $content;

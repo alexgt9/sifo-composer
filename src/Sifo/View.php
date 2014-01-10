@@ -44,7 +44,7 @@ class View extends \Smarty
 			$instance_inheritance = array_reverse( $instance_inheritance );
 			foreach ( $instance_inheritance as $current_instance )
 			{
-				$this->addPluginsDir( ROOT_PATH . '/' . $current_instance . '/templates/' . '_smarty/plugins' );
+				$this->addPluginsDir( ROOT_PATH . '/' . $current_instance . '/Resources/templates/' . '_smarty/plugins' );
 			}
 		}
 		else
@@ -57,7 +57,7 @@ class View extends \Smarty
 		$this->setTemplateDir( ROOT_PATH . '/' );  // The templates are taken using the templates.config.php mappings, under the variable $_tpls.
 
 		// Paths definition:
-		$templates_path = ROOT_PATH . '/' . Bootstrap::$instance . '/templates/';
+		$templates_path = ROOT_PATH . '/' . Bootstrap::$instance . '/Resources/templates/';
 		$this->setCompileDir( $templates_path . '_smarty/compile/' );
 		$this->setConfigDir( $templates_path . '_smarty/configs/' );
 		$this->setCacheDir( $templates_path . '_smarty/cache/' );
