@@ -69,7 +69,7 @@ class Config
 		}
 		else
 		{
-			$this->config_path = ROOT_PATH . "/instances/" . $instance_name ."/config/";
+			$this->config_path = ROOT_PATH . "/" . $instance_name ."/config/";
 		}
 
 		include( $this->config_path . $this->configuration_files );

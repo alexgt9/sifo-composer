@@ -18,14 +18,14 @@
  *
  */
 
-namespace Sifo;
+namespace Sifo\Cache;
 
 /**
  * Caching system based on Disk. Only TEXT objects can be cached.
  *
  * Serialize data before setting elements if needed.
  */
-class CacheDisk extends CacheBase
+class Disk extends Base
 {
 	/**
 	 * Creates the CacheDisk object and inits the "cache_object" used by parent.

@@ -70,7 +70,7 @@ abstract class MediaPacker
 		$this->generated_files_public_path = $this->media_type . '/generated';
 
 		// Packed contents will be stored under this filesystem path. You can overwrite this property:
-		$this->generated_files_folder = ROOT_PATH . '/instances/' . $this->working_instance . '/public/static/' . $this->generated_files_public_path;
+		$this->generated_files_folder = ROOT_PATH . '/' . $this->working_instance . '/public/static/' . $this->generated_files_public_path;
 
 
 	}

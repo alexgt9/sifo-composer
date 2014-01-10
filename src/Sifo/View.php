@@ -20,9 +20,6 @@
 
 namespace Sifo;
 
-include_once ROOT_PATH . '/libs/'. Config::getInstance()->getLibrary( 'smarty' ).'/Smarty.class.php';
-
-
 /**
  * Templating engine. Compiles some smarty stuff for an easier management.
  */
@@ -47,7 +44,7 @@ class View extends \Smarty
 			$instance_inheritance = array_reverse( $instance_inheritance );
 			foreach ( $instance_inheritance as $current_instance )
 			{
-				$this->addPluginsDir( ROOT_PATH . '/instances/' . $current_instance . '/templates/' . '_smarty/plugins' );
+				$this->addPluginsDir( ROOT_PATH . '/' . $current_instance . '/templates/' . '_smarty/plugins' );
 			}
 		}
 		else
@@ -55,12 +52,12 @@ class View extends \Smarty
 			$this->addPluginsDir( $templates_path . '_smarty/plugins' );
 		}
 		// Last path is the default smarty plugins directory.
-		$this->addPluginsDir( ROOT_PATH . '/libs/Smarty-sifo-plugins' );
+		$this->addPluginsDir( ROOT_PATH . '/../vendor/alexgt9/Smarty-sifo-plugins' );
 
 		$this->setTemplateDir( ROOT_PATH . '/' );  // The templates are taken using the templates.config.php mappings, under the variable $_tpls.
 
 		// Paths definition:
-		$templates_path = ROOT_PATH . '/instances/' . Bootstrap::$instance . '/templates/';
+		$templates_path = ROOT_PATH . '/' . Bootstrap::$instance . '/templates/';
 		$this->setCompileDir( $templates_path . '_smarty/compile/' );
 		$this->setConfigDir( $templates_path . '_smarty/configs/' );
 		$this->setCacheDir( $templates_path . '_smarty/cache/' );

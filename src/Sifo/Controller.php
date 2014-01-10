@@ -35,13 +35,6 @@ abstract class Controller
 	const CACHE_DEFAULT_EXPIRATION = 14400;
 
 	/**
-	 * List of classes that will be auto-loaded automatically.
-	 *
-	 * Format: $include_classes = array( 'Metadata', 'FlashMessages', 'Session', 'Cookie' );
-	 */
-	protected $include_classes = array();
-
-	/**
 	 * Information useful for debugging.
 	 *
 	 * @var array
@@ -116,7 +109,6 @@ abstract class Controller
 	public function __construct()
 	{
 
-		$this->includeClasses();
 		$this->instance = Bootstrap::$instance;
 		$this->language = Domains::getInstance()->getLanguage();
 
@@ -195,20 +187,6 @@ abstract class Controller
 		$this->assign( 'error', $form->getErrors() );
 
 		return $return;
-	}
-
-	/**
-	 * Includes all the classes passed in the 'include_classes' attribute.
-	 */
-	protected function includeClasses()
-	{
-		if ( is_array( $this->include_classes ) && !empty ( $this->include_classes ) )
-		{
-			foreach ( $this->include_classes as $class )
-			{
-				$this->getClass( $class, false );
-			}
-		}
 	}
 
 	public function getUrl( $relative_path, $params = null )
@@ -698,7 +676,6 @@ abstract class Controller
 	{
 		$benchmark_key = 'controller_execution_time';
 		$this->startBench( $benchmark_key );
-
 		$module = Bootstrap::invokeController( $controller );
 		$module->setParams( array_merge( $this->getParams(), $params ) );
 		$module->preDispatch();
