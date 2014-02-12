@@ -1,4 +1,4 @@
 sifo-composer
 =============
 
-Sifo using composer for test
+Sifo using composer for test.
